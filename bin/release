@@ -1,0 +1,7 @@
+#!/bin/sh
+
+BUILD_DIR=$1
+echo "-----> Release - $(BUILD_DIR)"
+
+default_process_types:
+  web: echo 'deno run $HOME/app/mod.ts' 

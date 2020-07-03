@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Absolute path
+BIN_DIR=$(cd $(dirname $0) && pwd)
+echo "----> $(BIN_DIR)"
+
+BUILD_DIR=$1
+echo "----> $(BUILD_DIR)"
+CACHE_DIR=$2
+echo "----> $(CACHE_DIR)"
+
+echo "----> Installing latest stable Deno from DenoLand"
+curl -fsSL https://deno.land/x/install/install.sh | sh 2>&1
+
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+echo "----> Compiling and Running Deno Program"
+deno run https://deno.land/std/examples/welcome.ts
+
+

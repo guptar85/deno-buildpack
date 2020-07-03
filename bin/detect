@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+BUILD_DIR=$1
+
+if [ -f ${BUILD_DIR}/mod.ts]; then
+  echo "Deno" && exit 0
+else
+  echo "Unable to find mod.ts file" && exit 1
+fi
